@@ -4,7 +4,7 @@ RailsAdmin.config do |config|
   # or somethig more dynamic
   config.main_app_name = Proc.new { |controller| ["Taxi", "- #{controller.params[:action].try(:titleize)}"] }
 
-  
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -12,7 +12,7 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :admin
   end
   config.current_user_method(&:current_admin)
-  
+
   ## == Cancan ==
   # config.authorize_with :cancan
 
@@ -22,18 +22,41 @@ RailsAdmin.config do |config|
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
-    new
-    export
-    bulk_delete
-    show
-    edit
-    delete
-    show_in_app
-
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+
+    dashboard # mandatory
+    # collection actions
+    index # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    history_show
+    show_in_app
+
+    # Add the nestable action for configured models
+    nestable do
+      visible do
+        %w(List Node).include? bindings[:abstract_model].model_name
+      end
+    end
+  end
+
+  config.model Page do
+    nestable_list true
+    field :title
+    field :body
+    field :parent_id, :enum do
+      enum do
+        Page.select(:id).map { |page| page.id } #this is just an example though
+      end
+    end
   end
 end

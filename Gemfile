@@ -20,6 +20,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Admin
 gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'ancestry'
+gem 'rails_admin_nestable'
 
 
 # Use ActiveModel has_secure_password
