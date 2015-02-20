@@ -32,15 +32,13 @@ ActiveRecord::Schema.define(version: 20150219144950) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "body",       limit: 65535
-    t.string   "path",       limit: 255
-    t.string   "ancestry",   limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string "title",    limit: 255
+    t.text   "body",     limit: 65535
+    t.string "path",     limit: 255
+    t.string "ancestry", limit: 255
   end
 
   add_index "pages", ["ancestry"], name: "index_pages_on_ancestry", using: :btree
-  add_index "pages", ["path"], name: "index_pages_on_path", unique: true, using: :btree
+  add_index "pages", ["path"], name: "index_pages_on_path", using: :btree
 
 end

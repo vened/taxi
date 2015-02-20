@@ -5,10 +5,9 @@ class CreatePages < ActiveRecord::Migration
       t.text :body
       t.string :path
       t.string :ancestry
-
-      t.timestamps null: false
+      # t.timestamps null: false
     end
     add_index :pages, :ancestry
-    add_index :pages, :path, unique: true
+    add_index :pages, :path
   end
 end

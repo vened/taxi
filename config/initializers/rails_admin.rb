@@ -13,6 +13,7 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_admin)
 
+
   ## == Cancan ==
   # config.authorize_with :cancan
 
@@ -30,6 +31,10 @@ RailsAdmin.config do |config|
     dashboard # mandatory
     # collection actions
     index # mandatory
+    nestable do
+      only Page
+    end
+    
     new
     export
     history_index
@@ -40,23 +45,16 @@ RailsAdmin.config do |config|
     delete
     history_show
     show_in_app
-
-    # Add the nestable action for configured models
-    nestable do
-      visible do
-        %w(List Node).include? bindings[:abstract_model].model_name
-      end
-    end
   end
 
-  config.model Page do
-    nestable_list true
-    field :title
-    field :body
-    field :parent_id, :enum do
-      enum do
-        Page.select(:id).map { |page| page.id } #this is just an example though
-      end
-    end
-  end
+  # config.model Page do
+  #   nestable_list true
+  #   field :title
+  #   field :body
+  #   field :parent_id, :enum do
+  #     enum do
+  #       Page.select(:id).map { |page| page.id } #this is just an example though
+  #     end
+  #   end
+  # end
 end
