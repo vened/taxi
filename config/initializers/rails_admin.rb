@@ -22,6 +22,9 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+
+  config.excluded_models = ["Ckeditor::Asset", "Ckeditor::AttachmentFile", "Ckeditor::Picture"]
+  
   config.actions do
     ## With an audit adapter, you can add:
     # history_index
