@@ -1,17 +1,13 @@
 class Page < ActiveRecord::Base
-  has_ancestry
-  attr_accessor :parent_id
+  acts_as_nested_set
 
 
   def parent_enum
     Page.where.not(id: id).map { |c| [c.title, c.id] }
   end
-  
+
   rails_admin do
-    nestable_tree({
-                      position_field: :ancestry,
-                      max_depth: 10
-                  })
+    nested_set({max_depth: 2})
     list do
       field :title
       field :path

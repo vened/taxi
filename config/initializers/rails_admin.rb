@@ -26,27 +26,23 @@ RailsAdmin.config do |config|
   config.excluded_models = ["Ckeditor::Asset", "Ckeditor::AttachmentFile", "Ckeditor::Picture"]
   
   config.actions do
-    ## With an audit adapter, you can add:
-    # history_index
-    # history_show
-
-
-    dashboard # mandatory
-    # collection actions
-    index # mandatory
-    nestable do
-      only Page
-    end
-    
+    dashboard
+    index
+    nested_set do
+      visible do
+        %w(Page).include? bindings[:abstract_model].model_name
+      end
+    end    
     new
-    export
-    history_index
+    export do
+      visible do
+        %w(Page).include? bindings[:abstract_model].model_name
+      end
+    end
     bulk_delete
-    # member actions
     show
     edit
     delete
-    history_show
     show_in_app
   end
 

@@ -48,13 +48,20 @@ ActiveRecord::Schema.define(version: 20150220182657) do
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string "title",    limit: 255
-    t.text   "body",     limit: 65535
-    t.string "path",     limit: 255
-    t.string "ancestry", limit: 255
+    t.string  "title",     limit: 255
+    t.text    "body",      limit: 65535
+    t.integer "parent_id", limit: 4
+    t.integer "lft",       limit: 4
+    t.integer "rgt",       limit: 4
+    t.integer "depth",     limit: 4
+    t.string  "path",      limit: 255
+    t.boolean "feedback",  limit: 1
+    t.boolean "order",     limit: 1
   end
 
-  add_index "pages", ["ancestry"], name: "index_pages_on_ancestry", using: :btree
+  add_index "pages", ["lft"], name: "index_pages_on_lft", using: :btree
+  add_index "pages", ["parent_id"], name: "index_pages_on_parent_id", using: :btree
   add_index "pages", ["path"], name: "index_pages_on_path", using: :btree
+  add_index "pages", ["rgt"], name: "index_pages_on_rgt", using: :btree
 
 end

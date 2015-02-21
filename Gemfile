@@ -7,6 +7,8 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem 'devise'
 gem 'mysql2'
+gem 'awesome_nested_set'
+gem 'rails_admin_nested_set'
 gem 'cells'
 
 
