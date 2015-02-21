@@ -6,15 +6,16 @@ gem 'rails', '4.2.0'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem 'devise'
-# Use mysql as the database for Active Record
 gem 'mysql2'
-# Use SCSS for stylesheets
+gem 'cells'
+
+
+gem 'jquery-rails', '~> 4.0.3'
+gem 'slim-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

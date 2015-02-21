@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/:id' => 'pages#show'
   
-  # resources :pages
+  resources :pages
 
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -1,0 +1,15 @@
+/=debug request.path
+ul.nav.navbar-nav
+  -@pages.each do |page|
+    li class=(request.fullpath == page.path ? 'active' : '')
+      =link_to page.title, page
+
+  li.dropdown
+    a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 
+      | Dropdown
+      span.caret
+    ul.dropdown-menu role="menu" 
+      li
+        a href="#"  Action
+      li
+        a href="#"  Another action    
