@@ -49,6 +49,9 @@ GEM
       tzinfo (~> 1.1)
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (6.0.0)
     autoprefixer-rails (5.1.7)
       execjs
@@ -260,6 +263,7 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
+  annotate (~> 2.6.5)
   awesome_nested_set
   bootstrap-sass (~> 3.3.3)
   byebug
