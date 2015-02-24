@@ -10,9 +10,23 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 $text-color: #333;
 $logo-color: #213341;
 $dropdown-link-active-bg: lighten(#ffcc4f, 10%) !default;
-$dropdown-link-active-color: #000000;
+$dropdown-link-active-color: #000;
+$hr-border: #ffcc4f;
+$header-bg: #ffcc4f;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "header";
+
+footer{
+
+    .create{
+        display: inline-block;
+        
+        img{
+            margin: -2px 0 0 5px;
+            height: 20px;
+        }
+    }
+}

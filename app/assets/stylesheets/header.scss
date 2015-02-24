@@ -1,6 +1,6 @@
 header{
     padding: 20px 0;
-    background-color: #ffcc4f;
+    background-color: $header-bg;
     text-align: center;
 
     .logo{
@@ -72,6 +72,12 @@ header{
                 }
             }
         }
+    }
+}
+
+.banner{
+    img{
+        width: 100%;
     }
 }
 

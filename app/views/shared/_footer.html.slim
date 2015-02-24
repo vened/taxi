@@ -1,4 +1,11 @@
-.container.marketing
+hr.featurette-divider
+.container
   footer
-      p
-        | &copy; 2014 Company, Inc. &middot;
+    .row
+      .col-md-6
+        | &copy; 2015 Корпоративное такси
+      .col-md-6.text-right
+        .create
+          | Разработка сайта -
+          = link_to 'http://rocket-web.ru/', {:target => '_blank'} do
+            = image_tag "create.png", alt: "Веб студия Rocket-web"
