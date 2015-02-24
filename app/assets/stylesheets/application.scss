@@ -18,15 +18,4 @@ $header-bg: #ffcc4f;
 @import "bootstrap";
 @import "font-awesome";
 @import "header";
-
-footer{
-
-    .create{
-        display: inline-block;
-        
-        img{
-            margin: -2px 0 0 5px;
-            height: 20px;
-        }
-    }
-}
+@import "sticky-footer";
