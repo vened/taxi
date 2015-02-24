@@ -1,4 +1,13 @@
-.navbar-wrapper
+header
+  .container
+    =link_to '/', :class => "logo" do
+      = image_tag "car.png", alt: "Корпоративное такси"
+      span Клевое такси
+    = render_cell :menu, :list
+      
+    
+
+/.navbar-wrapper
   .container
     nav.navbar.navbar-inverse.navbar-static-top
       .container

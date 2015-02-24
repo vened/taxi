@@ -1,12 +1,12 @@
 /=debug request.path
-ul.nav.navbar-nav
+ul.menu
   -@pages.each do |page|
     - if page.children.length > 0
-      li.dropdown
-        a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#{page.full_path}" role="button"
+      li.menu-sub
+        a href="#{page.full_path}"
           =page.title
           span.caret
-        ul.dropdown-menu role="menu" 
+        ul.dropdown-menu 
           -page.children.each do |p|
             li class=(request.fullpath == p.full_path ? 'active' : '')
               =link_to p.title, p.full_path

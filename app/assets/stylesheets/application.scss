@@ -1,3 +1,18 @@
+$grid-gutter-width: 30px !default;
+$container-tablet: (720px + $grid-gutter-width) !default;
+$container-sm: $container-tablet !default;
+$container-desktop: (900px + $grid-gutter-width) !default;
+$container-md: $container-desktop !default;
+$container-large-desktop: $container-desktop !default;
+$container-lg: $container-large-desktop !default;
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$text-color: #333;
+$logo-color: #213341;
+$dropdown-link-active-bg: lighten(#ffcc4f, 10%) !default;
+$dropdown-link-active-color: #000000;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "carousel";
+@import "font-awesome";
+@import "header";
